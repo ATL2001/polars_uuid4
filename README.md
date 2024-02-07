@@ -18,7 +18,7 @@ pl.__version__
 
 
 
-    '0.20.3'
+    '0.20.7'
 
 
 
@@ -29,7 +29,7 @@ pl.__version__
 df = pl.DataFrame({
     'Random numbers': np.random.rand(10000000),
     'A string column': "value",
-}).with_row_count()
+}).with_row_index()
 df.tail()
 ```
 
@@ -43,7 +43,7 @@ df.tail()
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 3)</small><table border="1" class="dataframe"><thead><tr><th>row_nr</th><th>Random numbers</th><th>A string column</th></tr><tr><td>u32</td><td>f64</td><td>str</td></tr></thead><tbody><tr><td>9999995</td><td>0.410216</td><td>&quot;value&quot;</td></tr><tr><td>9999996</td><td>0.072977</td><td>&quot;value&quot;</td></tr><tr><td>9999997</td><td>0.763713</td><td>&quot;value&quot;</td></tr><tr><td>9999998</td><td>0.536438</td><td>&quot;value&quot;</td></tr><tr><td>9999999</td><td>0.703031</td><td>&quot;value&quot;</td></tr></tbody></table></div>
+<small>shape: (5, 3)</small><table border="1" class="dataframe"><thead><tr><th>index</th><th>Random numbers</th><th>A string column</th></tr><tr><td>u32</td><td>f64</td><td>str</td></tr></thead><tbody><tr><td>9999995</td><td>0.342875</td><td>&quot;value&quot;</td></tr><tr><td>9999996</td><td>0.283626</td><td>&quot;value&quot;</td></tr><tr><td>9999997</td><td>0.91639</td><td>&quot;value&quot;</td></tr><tr><td>9999998</td><td>0.299616</td><td>&quot;value&quot;</td></tr><tr><td>9999999</td><td>0.460211</td><td>&quot;value&quot;</td></tr></tbody></table></div>
 
 
 
@@ -65,7 +65,7 @@ df.uuid.with_uuid4()
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (10_000_000, 4)</small><table border="1" class="dataframe"><thead><tr><th>row_nr</th><th>Random numbers</th><th>A string column</th><th>uuid</th></tr><tr><td>u32</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>0</td><td>0.758339</td><td>&quot;value&quot;</td><td>&quot;{3952aa21-0957…</td></tr><tr><td>1</td><td>0.04649</td><td>&quot;value&quot;</td><td>&quot;{0708f057-7e56…</td></tr><tr><td>2</td><td>0.498708</td><td>&quot;value&quot;</td><td>&quot;{e655242c-cad8…</td></tr><tr><td>3</td><td>0.726538</td><td>&quot;value&quot;</td><td>&quot;{dc0d153c-71bd…</td></tr><tr><td>4</td><td>0.161975</td><td>&quot;value&quot;</td><td>&quot;{efef8d80-b8d0…</td></tr><tr><td>5</td><td>0.391948</td><td>&quot;value&quot;</td><td>&quot;{6b8f3261-3554…</td></tr><tr><td>6</td><td>0.341304</td><td>&quot;value&quot;</td><td>&quot;{5b1b6c85-96dd…</td></tr><tr><td>7</td><td>0.965395</td><td>&quot;value&quot;</td><td>&quot;{414e16d9-5c73…</td></tr><tr><td>8</td><td>0.689368</td><td>&quot;value&quot;</td><td>&quot;{ccbacf05-2857…</td></tr><tr><td>9</td><td>0.628131</td><td>&quot;value&quot;</td><td>&quot;{cb402ac3-3bfe…</td></tr><tr><td>10</td><td>0.643579</td><td>&quot;value&quot;</td><td>&quot;{5ba78915-fff1…</td></tr><tr><td>11</td><td>0.939639</td><td>&quot;value&quot;</td><td>&quot;{262364fb-534d…</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>9999988</td><td>0.512794</td><td>&quot;value&quot;</td><td>&quot;{c67f2d3b-fd65…</td></tr><tr><td>9999989</td><td>0.108904</td><td>&quot;value&quot;</td><td>&quot;{7107720a-9b12…</td></tr><tr><td>9999990</td><td>0.834744</td><td>&quot;value&quot;</td><td>&quot;{8447f2f4-b763…</td></tr><tr><td>9999991</td><td>0.987605</td><td>&quot;value&quot;</td><td>&quot;{aae4b490-ba50…</td></tr><tr><td>9999992</td><td>0.973912</td><td>&quot;value&quot;</td><td>&quot;{aa698d5c-6970…</td></tr><tr><td>9999993</td><td>0.82106</td><td>&quot;value&quot;</td><td>&quot;{59cf6971-aae2…</td></tr><tr><td>9999994</td><td>0.080472</td><td>&quot;value&quot;</td><td>&quot;{c5d4edc6-68d4…</td></tr><tr><td>9999995</td><td>0.410216</td><td>&quot;value&quot;</td><td>&quot;{e6619727-4d97…</td></tr><tr><td>9999996</td><td>0.072977</td><td>&quot;value&quot;</td><td>&quot;{dc162d63-8bee…</td></tr><tr><td>9999997</td><td>0.763713</td><td>&quot;value&quot;</td><td>&quot;{361df98d-259e…</td></tr><tr><td>9999998</td><td>0.536438</td><td>&quot;value&quot;</td><td>&quot;{fd538ddf-7b46…</td></tr><tr><td>9999999</td><td>0.703031</td><td>&quot;value&quot;</td><td>&quot;{5fc43590-f343…</td></tr></tbody></table></div>
+<small>shape: (10_000_000, 4)</small><table border="1" class="dataframe"><thead><tr><th>index</th><th>Random numbers</th><th>A string column</th><th>uuid</th></tr><tr><td>u32</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>0</td><td>0.431903</td><td>&quot;value&quot;</td><td>&quot;{57cfa3fd-01a5…</td></tr><tr><td>1</td><td>0.198707</td><td>&quot;value&quot;</td><td>&quot;{3e418a42-db42…</td></tr><tr><td>2</td><td>0.626431</td><td>&quot;value&quot;</td><td>&quot;{1e16aeb2-0675…</td></tr><tr><td>3</td><td>0.790102</td><td>&quot;value&quot;</td><td>&quot;{e1129c0a-38e1…</td></tr><tr><td>4</td><td>0.907382</td><td>&quot;value&quot;</td><td>&quot;{8ad58341-ab23…</td></tr><tr><td>5</td><td>0.995303</td><td>&quot;value&quot;</td><td>&quot;{83ed9d53-30a5…</td></tr><tr><td>6</td><td>0.998931</td><td>&quot;value&quot;</td><td>&quot;{2ce35a0f-9981…</td></tr><tr><td>7</td><td>0.836289</td><td>&quot;value&quot;</td><td>&quot;{655d0891-0f1b…</td></tr><tr><td>8</td><td>0.872352</td><td>&quot;value&quot;</td><td>&quot;{77fec4e7-1a23…</td></tr><tr><td>9</td><td>0.529137</td><td>&quot;value&quot;</td><td>&quot;{912c7ff7-0a12…</td></tr><tr><td>10</td><td>0.322931</td><td>&quot;value&quot;</td><td>&quot;{d6402d0d-b5ab…</td></tr><tr><td>11</td><td>0.456256</td><td>&quot;value&quot;</td><td>&quot;{26c89cc9-d740…</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>9999988</td><td>0.006378</td><td>&quot;value&quot;</td><td>&quot;{ddc657e6-2fa7…</td></tr><tr><td>9999989</td><td>0.50514</td><td>&quot;value&quot;</td><td>&quot;{3a7f87a4-23de…</td></tr><tr><td>9999990</td><td>0.708277</td><td>&quot;value&quot;</td><td>&quot;{b51b0665-32a0…</td></tr><tr><td>9999991</td><td>0.743679</td><td>&quot;value&quot;</td><td>&quot;{5fe2070b-9d4c…</td></tr><tr><td>9999992</td><td>0.937289</td><td>&quot;value&quot;</td><td>&quot;{11b6f029-6d44…</td></tr><tr><td>9999993</td><td>0.763785</td><td>&quot;value&quot;</td><td>&quot;{44b87135-d0a7…</td></tr><tr><td>9999994</td><td>0.913705</td><td>&quot;value&quot;</td><td>&quot;{9127c91c-2a4f…</td></tr><tr><td>9999995</td><td>0.342875</td><td>&quot;value&quot;</td><td>&quot;{4dcc6d5e-97da…</td></tr><tr><td>9999996</td><td>0.283626</td><td>&quot;value&quot;</td><td>&quot;{3b34e5ff-1047…</td></tr><tr><td>9999997</td><td>0.91639</td><td>&quot;value&quot;</td><td>&quot;{d32b1a17-50ba…</td></tr><tr><td>9999998</td><td>0.299616</td><td>&quot;value&quot;</td><td>&quot;{71ad3545-fe92…</td></tr><tr><td>9999999</td><td>0.460211</td><td>&quot;value&quot;</td><td>&quot;{5ca39c0a-9993…</td></tr></tbody></table></div>
 
 
 
@@ -76,7 +76,7 @@ df.uuid.with_uuid4()
 df = pl.LazyFrame({
     'Random numbers': np.random.rand(10000000),
     'A string column': "value",
-}).with_row_count().uuid.with_uuid4().collect()
+}).with_row_index().uuid.with_uuid4().collect()
 df.tail()
 ```
 
@@ -90,7 +90,7 @@ df.tail()
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 4)</small><table border="1" class="dataframe"><thead><tr><th>row_nr</th><th>Random numbers</th><th>A string column</th><th>uuid</th></tr><tr><td>u32</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>9999995</td><td>0.313736</td><td>&quot;value&quot;</td><td>&quot;{a7a4d264-da44…</td></tr><tr><td>9999996</td><td>0.833383</td><td>&quot;value&quot;</td><td>&quot;{71fd5366-c708…</td></tr><tr><td>9999997</td><td>0.5506</td><td>&quot;value&quot;</td><td>&quot;{294ec201-2df2…</td></tr><tr><td>9999998</td><td>0.339044</td><td>&quot;value&quot;</td><td>&quot;{2fbde60d-a46e…</td></tr><tr><td>9999999</td><td>0.896245</td><td>&quot;value&quot;</td><td>&quot;{1673458a-565e…</td></tr></tbody></table></div>
+<small>shape: (5, 4)</small><table border="1" class="dataframe"><thead><tr><th>index</th><th>Random numbers</th><th>A string column</th><th>uuid</th></tr><tr><td>u32</td><td>f64</td><td>str</td><td>str</td></tr></thead><tbody><tr><td>9999995</td><td>0.185959</td><td>&quot;value&quot;</td><td>&quot;{c4baf1ce-98c5…</td></tr><tr><td>9999996</td><td>0.005801</td><td>&quot;value&quot;</td><td>&quot;{172ddf3c-ea9b…</td></tr><tr><td>9999997</td><td>0.606094</td><td>&quot;value&quot;</td><td>&quot;{3dc75c0d-19fd…</td></tr><tr><td>9999998</td><td>0.268984</td><td>&quot;value&quot;</td><td>&quot;{f9a4f709-a2e9…</td></tr><tr><td>9999999</td><td>0.22677</td><td>&quot;value&quot;</td><td>&quot;{75f6c83d-a693…</td></tr></tbody></table></div>
 
 
 
@@ -110,7 +110,7 @@ df.with_columns(
 )
 ```
 
-    20.4 s ± 225 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    20.4 s ± 160 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
     
 
 ##### Using pl_uuid to generate a UUID4 for each row 
@@ -118,7 +118,7 @@ df.with_columns(
   * Uses rust uuid crate.
   * Much easier to understand/simpler code.
   * ~ 40x faster than using python's uuid module to generate UUID4 when the last column in the df is already a string
-  * 540 ms ± 6.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+  * 512 ms ± 6.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 
 ```python
@@ -126,17 +126,17 @@ df.with_columns(
 df.uuid.with_uuid4()
 ```
 
-    540 ms ± 6.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    512 ms ± 6.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
     
 
 ##### Not quite as fast if there isnt an existing string column in the dataframe
-  * 656 ms ± 6.66 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+  * 644 ms ± 6.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 
 ```python
 df = pl.DataFrame({
     'Random numbers': np.random.rand(10000000),
-}).with_row_count()
+}).with_row_index()
 df.tail()
 ```
 
@@ -150,7 +150,7 @@ df.tail()
   white-space: pre-wrap;
 }
 </style>
-<small>shape: (5, 2)</small><table border="1" class="dataframe"><thead><tr><th>row_nr</th><th>Random numbers</th></tr><tr><td>u32</td><td>f64</td></tr></thead><tbody><tr><td>9999995</td><td>0.334474</td></tr><tr><td>9999996</td><td>0.006089</td></tr><tr><td>9999997</td><td>0.295484</td></tr><tr><td>9999998</td><td>0.065312</td></tr><tr><td>9999999</td><td>0.644697</td></tr></tbody></table></div>
+<small>shape: (5, 2)</small><table border="1" class="dataframe"><thead><tr><th>index</th><th>Random numbers</th></tr><tr><td>u32</td><td>f64</td></tr></thead><tbody><tr><td>9999995</td><td>0.313362</td></tr><tr><td>9999996</td><td>0.679717</td></tr><tr><td>9999997</td><td>0.076164</td></tr><tr><td>9999998</td><td>0.853126</td></tr><tr><td>9999999</td><td>0.892428</td></tr></tbody></table></div>
 
 
 
@@ -160,10 +160,5 @@ df.tail()
 df.uuid.with_uuid4()
 ```
 
-    656 ms ± 6.66 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    644 ms ± 6.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
     
-
-
-```python
-
-```
